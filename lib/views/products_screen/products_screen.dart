@@ -1,6 +1,10 @@
 import 'package:ecommerce_seller/const/const.dart';
 import 'package:ecommerce_seller/views/auth_screen/widgets/normal_text.dart';
+import 'package:ecommerce_seller/views/products_screen/add_product.dart';
+import 'package:ecommerce_seller/views/products_screen/product_details.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:intl/intl.dart' as intl;
 
 class ProductScreen extends StatelessWidget {
@@ -11,7 +15,9 @@ class ProductScreen extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: purpleColor,
-        onPressed: () {},
+        onPressed: () {
+          Get.to(()=> AddProduct());
+        },
         child: Icon(Icons.add),
       ),
       appBar: AppBar(
@@ -35,7 +41,9 @@ class ProductScreen extends StatelessWidget {
             children: List.generate(
                 20,
                 (index) => ListTile(
-                      onTap: () {},
+                      onTap: () {
+                        Get.to(()=> ProducDetails());
+                      },
                       leading: Image.asset(imgProducts,
                           height: 90.0, width: 90.0, fit: BoxFit.cover),
                       title: boldText(text: 'products title', color: fontGrey),
