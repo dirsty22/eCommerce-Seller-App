@@ -6,7 +6,8 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
 class ProducDetails extends StatelessWidget {
-  const ProducDetails({super.key});
+  final dynamic data;
+  const ProducDetails({super.key,this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class ProducDetails extends StatelessWidget {
               color: darkGrey,
             )),
         backgroundColor: white,
-        title: boldText(text: 'Product title', size: 16.0, color: fontGrey),
+        title: boldText(text: '${data['p_name']}', size: 16.0, color: fontGrey),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -31,11 +32,11 @@ class ProducDetails extends StatelessWidget {
             VxSwiper.builder(
                 autoPlay: true,
                 height: 250,
-                itemCount: 3,
+                itemCount: data['p_img'].length,
                 aspectRatio: 16 / 9,
                 itemBuilder: (context, index) {
-                  return Image.asset(
-                    imgProducts,
+                  return Image.network(
+                   data['p_img'][0],
                     width: double.infinity,
                     fit: BoxFit.cover,
                   );
@@ -45,7 +46,7 @@ class ProducDetails extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
-                  boldText(text: "Product title", color: fontGrey, size: 16.0),
+                  boldText(text: '${data['p_name']}', color: fontGrey, size: 16.0),
                   10.heightBox,
                   Row(
                     children: [

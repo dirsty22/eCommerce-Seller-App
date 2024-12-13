@@ -54,7 +54,7 @@ class ProductScreen extends StatelessWidget {
                         data.length,
                         (index) => ListTile(
                               onTap: () {
-                                Get.to(() => ProducDetails());
+                                Get.to(() => ProducDetails(data: data[index],));
                               },
                               leading: Image.network(data[index]['p_img'][0],
                                   height: 100, width: 100, fit: BoxFit.cover),
