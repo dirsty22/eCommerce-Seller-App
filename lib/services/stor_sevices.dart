@@ -30,4 +30,8 @@ class StoreServices {
   static getProduct(uid){
     return firestore.collection(producsCollection).where('vendor_id',isEqualTo: uid).snapshots();
   }
+
+ 
+
+
 }

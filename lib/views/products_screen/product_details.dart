@@ -50,14 +50,14 @@ class ProducDetails extends StatelessWidget {
                   10.heightBox,
                   Row(
                     children: [
-                      boldText(text: 'Category', color: fontGrey,size: 16.0),
+                      boldText(text: '${data['p_category']}', color: fontGrey,size: 16.0),
                       10.widthBox,
-                      normalText(text: 'Subcategory',color: fontGrey,size: 16.0)
+                      normalText(text: '${data['p_subcategory']}',color: fontGrey,size: 16.0)
                     ],
                   ),
                   10.heightBox,
                   VxRating(
-                    value: 3.0,
+                    value: double.parse(data['p_rating']),
                     onRatingUpdate: (value) {},
                     normalColor: textfieldGrey,
                     selectionColor: golden,
@@ -67,7 +67,7 @@ class ProducDetails extends StatelessWidget {
                     // stepInt: true,
                   ),
                   10.heightBox,
-                  boldText(text: 'Price', color: red, size: 16.0),
+                  boldText(text: "\$${data['p_price']}", color: red, size: 16.0),
                   10.heightBox,
                   Column(
                     children: [
@@ -97,7 +97,7 @@ class ProducDetails extends StatelessWidget {
                               width: 100,
                               child: boldText(
                                   text: 'Quantity', color: fontGrey)),
-                                  normalText(text: '20 items',color: fontGrey)
+                                  normalText(text: "${data['p_quantity']}",color: fontGrey)
                         ],
                       ).box.padding(EdgeInsets.all(8)).make(),
                     ],
@@ -112,7 +112,7 @@ class ProducDetails extends StatelessWidget {
             10.heightBox,
             boldText(text: 'Description',color: fontGrey),
             10.heightBox,
-            normalText(text: 'jbjhbinnk kojf',color: fontGrey)
+            normalText(text: "${data['p_desc']}",color: fontGrey)
           ]
           
           ),
