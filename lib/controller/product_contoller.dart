@@ -56,7 +56,7 @@ class productController extends GetxController {
       if (img == null) {
         return;
       } else {
-        pImagesList[index] == File(img.path);
+        pImagesList[index] = File(img.path);
       }
     } catch (e) {
       VxToast.show(context, msg: e.toString());
@@ -78,6 +78,20 @@ class productController extends GetxController {
   }
 
   uploadProduct(context) async {
+    print("----------------------");
+    print(pnameController.text);
+    if (pnameController.text == '') {
+      VxToast.show(context, msg: "Product name not found", bgColor: Colors.red);
+      return;
+    }
+    if (ppriceController.text == '') {
+      VxToast.show(context, msg: "price not found", bgColor: Colors.red);
+      return;
+    }
+    if (pdescController.text == '') {
+      VxToast.show(context, msg: "Product desc not found", bgColor: Colors.red);
+      return;
+    }
     var store = firestore.collection(producsCollection).doc();
     await store.set({
       'is_featured': false,
@@ -111,9 +125,7 @@ class productController extends GetxController {
         {'featured_id': '', 'is_featured': false}, SetOptions(merge: true));
   }
 
-  removeProduct(docID) async{
+  removeProduct(docID) async {
     await firestore.collection(producsCollection).doc(docID).delete();
   }
-
-
 }

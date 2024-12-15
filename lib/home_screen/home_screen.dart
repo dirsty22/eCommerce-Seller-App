@@ -76,7 +76,7 @@ class HomeScreen extends StatelessWidget {
                       shrinkWrap: true,
                       children: List.generate(
                           data.length,
-                          (index) => ListTile(
+                          (index) => data[index]['p_wishlist'].length == 0 ? SizedBox(): ListTile(
                                 onTap: () {
                                   Get.to(()=>ProducDetails(data: data[index],));
                                 },

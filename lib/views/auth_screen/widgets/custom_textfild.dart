@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 
 Widget customTextField({label, hint ,controller}) {
   return TextFormField(
+    controller: controller,
     style: TextStyle(color: white),
     decoration: InputDecoration(
       isDense: true,

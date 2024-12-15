@@ -62,8 +62,8 @@ class ProductScreen extends StatelessWidget {
                                       data: data[index],
                                     ));
                               },
-                              leading: Image.asset(imgProducts,
-                                  // leading: Image.network(data[index]['p_img'][0],
+                              // leading: Image.asset(imgProducts,
+                                 leading: Image.network(data[index]['p_img'][0],
                                   height: 100,
                                   width: 100,
                                   fit: BoxFit.cover),

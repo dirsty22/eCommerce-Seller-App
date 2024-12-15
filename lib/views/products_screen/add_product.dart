@@ -48,22 +48,22 @@ class AddProduct extends StatelessWidget {
             child: Column(
               children: [
                 customTextField(
-                    hint: 'Laptop',
+                    hint: '',
                     label: 'Product Name',
                     controller: controller.pnameController),
                 10.heightBox,
                 customTextField(
-                    hint: 'nice Prduct',
+                    hint: '',
                     label: 'Description',
                     controller: controller.pdescController),
                 10.heightBox,
                 customTextField(
-                    hint: '\$100',
+                    hint: '\$',
                     label: 'Price',
                     controller: controller.ppriceController),
                 10.heightBox,
                 customTextField(
-                    hint: '20',
+                    hint: '',
                     label: 'Qunatity',
                     controller: controller.pquantityController),
                 10.heightBox,
